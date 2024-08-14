@@ -1,7 +1,8 @@
 import cart from './assets/cart-variant.svg'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
-function Navbar() {
+function Navbar({ shoppingCart }) {
     return (
         <header className='navbar bg-base-300'>
         <div className='flex-1 px-2 lg:flex-none'>
@@ -47,12 +48,17 @@ function Navbar() {
                 <img src={cart} alt='cart' />
             </Link>
             <div className='indicator-item badge badge-accent scale-75'>
-              3
+              {shoppingCart.length}
             </div>
           </div>
         </div>
       </header>
     )
 }
+
+Navbar.propTypes = {
+  shoppingCart: PropTypes.array,
+}
+
 
 export default Navbar;

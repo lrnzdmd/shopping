@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
-import './App.css'
 import Footer from './Footer';
 import Navbar from './Navbar';
-import Carousel from './Carousel';
 import homeBg from './assets/homebg.jpg'
 
 async function fetchProducts(category) {
@@ -18,7 +16,7 @@ async function fetchProducts(category) {
 
 
 
-function App() {
+function Contacts() {
   const [productsList, setProductsList] = useState([]);
   const [shoppingCart, setShoppingCart] = useState([]);
  
@@ -32,10 +30,9 @@ function App() {
     fetchAllProducts();
   }, []);
 
-
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar shoppingCart={shoppingCart}></Navbar>
       <div
         className="hero h-full"
         style={{
@@ -47,11 +44,9 @@ function App() {
         <div className="hero-content text-neutral-content text-center">
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">
-              Find your vehicle today!
+              We do not exist.
             </h1>
-            <p className="mb-5">We offer some cars, and some motorcycles.</p>
           </div>
-          <Carousel productsList={productsList} itemsNumber={productsList.length / 2}></Carousel>
         </div>
       </div>
 
@@ -60,4 +55,4 @@ function App() {
   );
 }
 
-export default App
+export default Contacts;
