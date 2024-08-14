@@ -30,21 +30,21 @@ function Navbar({ shoppingCart }) {
                 className='menu dropdown-content bg-base-100 rounded-box z-[1] w-auto p-2 shadow'
               >
                 <li>
-                  <Link to={'products/cars'} className='text-lg'>Cars</Link>
+                  <Link to={'/products/cars'} className='text-lg'>Cars</Link>
                 </li>
                 <li>
-                  <Link to={'products/motorcycles'} className='text-lg'>Motorcycles</Link>
+                  <Link to={'/products/motorcycles'} className='text-lg'>Motorcycles</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <Link to={'contacts'} className='btn btn-ghost rounded-btn text-lg join-item'>
+              <Link to={'/contacts'} className='btn btn-ghost rounded-btn text-lg join-item'>
                 Contacts
               </Link>
             </li>
           </ul>
           <div className='indicator'>
-            <Link to={'cart'}className='btn btn-sm btn-ghost btn-circle'>
+            <Link to={'/cart'}className='btn btn-sm btn-ghost btn-circle'>
                 <img src={cart} alt='cart' />
             </Link>
             <div className='indicator-item badge badge-accent scale-75'>

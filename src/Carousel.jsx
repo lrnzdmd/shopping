@@ -55,7 +55,6 @@ function Carousel({ itemsNumber }) {
 }
 
 Carousel.propTypes = {
-    productsList: PropTypes.array,
     itemsNumber: PropTypes.number
 }
 

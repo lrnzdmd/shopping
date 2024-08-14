@@ -19,14 +19,19 @@ export function ShopProvider({ children }) {
     const [shoppingCart, setShoppingCart] = useState([]);
    
     useEffect(() => {
+        
       async function fetchAllProducts() {
         const motorcycleProducts = await fetchProducts('motorcycle');
         const vehicleProducts = await fetchProducts('vehicle');
         setProductsList([...motorcycleProducts, ...vehicleProducts]);
+      
       };
-    
+    if (!productsList || productsList.length === 0) {
       fetchAllProducts();
+    }
     }, []);
+
+  
 
 
 
