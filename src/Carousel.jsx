@@ -38,10 +38,7 @@ function Carousel({ itemsNumber }) {
         <>
         <div className="carousel rounded-box w-96 ">
 
-        {randomList.map((product , index, array) => {
-            if (!product) {
-                return null;
-            } else
+        {randomList.length < 1 ? <span className="loading loading-spinner loading-lg ml-36 "></span> :randomList.map((product , index, array) => {
             return (
                 <Slide key={product.id} product={product} index={index} list={array}></Slide>
             )
