@@ -1,8 +1,24 @@
 import cart from './assets/cart-variant.svg'
 import PropTypes from 'prop-types'
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ShopContext } from './context/ShopContext';
 
-function Navbar({ shoppingCart }) {
+function Navbar() {
+  const {shoppingCart} = useContext(ShopContext)
+  function amountInCart(shoppingCart) {
+    let totalItems = 0;
+    if (shoppingCart.length < 1) {
+      return 0;
+    } else {
+    shoppingCart.forEach(object => {
+      totalItems += object.amount;
+    })
+    return totalItems
+
+    }
+  }
+
     return (
         <header className='navbar bg-base-300'>
         <div className='flex-1 px-2 lg:flex-none'>
@@ -48,7 +64,7 @@ function Navbar({ shoppingCart }) {
                 <img src={cart} alt='cart' />
             </Link>
             <div className='indicator-item badge badge-accent scale-75'>
-              {shoppingCart.length}
+              {amountInCart(shoppingCart)}
             </div>
           </div>
         </div>

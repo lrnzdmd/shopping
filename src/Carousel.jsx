@@ -14,7 +14,7 @@ function Carousel({ itemsNumber }) {
             return [];
         }
 
-        const originalList = productsList;
+        const originalList = [...productsList];
         console.log("trying to create randomlist")
         const randomList = [];
         while (randomList.length < itemsNumber) {

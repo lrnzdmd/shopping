@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import Footer from './Footer';
 import Navbar from './Navbar';
-import homeBg from './assets/homebg.jpg'
+import contactsBg from './assets/contactsbg.jpg'
 import { ShopContext } from './context/ShopContext';
 
 
@@ -14,10 +14,9 @@ function Contacts() {
     <>
       <Navbar shoppingCart={shoppingCart}></Navbar>
       <div
-        className="hero h-full"
+        className="hero h-full min-h-screen"
         style={{
-          backgroundImage: `url(${homeBg})`,
-          height:"44.9em"
+          backgroundImage: `url(${contactsBg})`
         }}
       >
         <div className="hero-overlay bg-opacity-60"></div>

@@ -1,4 +1,5 @@
 import Card from "./Card";
+import PropTypes from "prop-types"
 
 
 function Slide({product, index, list}) {
@@ -28,4 +29,9 @@ function Slide({product, index, list}) {
     );
 }
 
+Slide.propTypes = {
+    product: PropTypes.object,
+    index: PropTypes.number,
+    list: PropTypes.array
+}
 export default Slide;
